@@ -5,20 +5,19 @@
 [![Yoker](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/christophevg/yoker/master/media/badge/v0.json)][yoker]
 [![Agentic](https://img.shields.io/badge/workflow-agentic-blueviolet?style=flat-square)][agentic]
 
-
 > A writing assistant that coaches and develops — but never writes for you.
 
-This is a Yoker 1.0 pet-store showcase package. It demonstrates the
-**yoker-as-runtime** mode: Yoker is the entry point, and this package
-provides the main agent and skills for an interactive writing coaching
-session. The agent interviews, challenges, reviews, and flags — but every
-word of prose is written by the author.
+This is a Yoker showcase package. It demonstrates the **yoker-as-runtime**
+mode: Yoker is the entry point, and this package provides the main agent
+and skills for an interactive writing coaching session. The agent
+interviews, challenges, reviews, and flags — but every word of prose is
+written by the author.
 
 ## Status
 
-Early setup phase. Agent and skill definitions exist from a prior
-implementation (Claude Code / c3) and are being adapted to Yoker. The
-Python package structure, plugin manifest, and entry point are pending.
+First pass implemented. The Python package, plugin manifest, entry point,
+agent definition, and all 8 skills are in place. Tests pass. See
+[`AGENTS.md`](AGENTS.md) for the full project guide.
 
 ## What It Does
 
@@ -49,8 +48,14 @@ the core design principle — friction is the value, not a bug.
 ## Quick Start
 
 ```bash
-make env-dev                    # install all dependencies
-make run                        # launch yoker chat with the writing assistant
+uvx yoker-writing-assistant                    # run directly (if published)
+```
+
+From a local checkout:
+
+```bash
+make env-dev                                    # install all dependencies
+make run                                        # launch the writing assistant
 ```
 
 Or run directly via the Yoker CLI:
@@ -76,29 +81,35 @@ sections:
 - `[skills.directories]` — directories to scan for skill definitions
   (e.g., `c3 = "../c3/skills"` for c3 heritage skills)
 - `[plugins]` — plugin registration (this package is loaded via
-  `--with yoker-writing-assistant`)
+  `--with yoker_writing_assistant`)
 
 ### Optional: c3 Researcher
 
 The writing assistant can delegate research tasks to `c3:researcher`, an
-external agent from the [c3](../c3) project. To enable it, add to
-`yoker.toml`:
+external agent from the [c3](https://github.com/christophevg/c3) project.
+To enable it, add to `yoker.toml`:
 
 ```toml
 [agents.directories]
 c3 = "../c3/agents"
+
+[skills.directories]
+c3 = "../c3/skills"
 ```
 
 If c3 is not configured, research delegation is unavailable and the agent
-notes this in its output. All other functionality works without c3.
+falls back to direct web search (`yoker:websearch`/`yoker:webfetch`),
+noting the limitation in its output. All other functionality works without
+c3.
 
 ## Architecture
 
 This package is a **Yoker plugin**: it declares an `__YOKER_MANIFEST__`
-that points Yoker to its `agents/` and `skills/` directories. Yoker's plugin
+that points Yoker to its `agents/` and `skills/` directories (inside the
+Python package, discovered via `importlib.resources`). Yoker's plugin
 loader discovers the agent and skill definitions automatically, namespacing
 them under `yoker_writing_assistant:`. The entry point is a thin Python
-wrapper (`cli.py`) that injects `--with yoker-writing-assistant` and
+wrapper (`cli.py`) that injects `--with yoker_writing_assistant` and
 `--agent yoker_writing_assistant:writing-assistant` into Yoker's CLI, so
 `uvx yoker-writing-assistant` launches the writing assistant directly.
 
@@ -112,17 +123,15 @@ Both projects share a common quality bar documented in
 
 ## Documentation
 
-Full documentation will live in `docs/` (pending).
+Full documentation will live in `docs/` (pending). The
+[AGENTS.md](AGENTS.md) file provides the project guide for agents working
+on this codebase.
 
 ## License
 
 [MIT](LICENSE)
 
-
-[pypi]: https://pypi.org/project/yoker/
+[pypi]: https://pypi.org/project/yoker-writing-assistant/
 [uv]: https://docs.astral.sh/uv/
 [agentic]: https://christophe.vg/about/Agentic-Workflow
 [yoker]: https://yoker.dev
-[ci]: https://github.com/christophevg/yoker/actions
-[coveralls]: https://coveralls.io/github/christophevg/yoker
-[license]: https://github.com/christophevg/yoker/blob/main/LICENSE

@@ -130,6 +130,5 @@ base_python = ["python3.11"]
 [tool.tox.env.py312]
 base_python = ["python3.12"]
 
-# temporary - uncomment for local development:
-# [tool.uv.sources]
-# yoker = { path = "../yoker", editable = true }
+[tool.uv.sources]
+yoker = { path = "../yoker", editable = true }

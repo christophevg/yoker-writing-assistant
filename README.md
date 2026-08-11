@@ -15,9 +15,9 @@ written by the author.
 
 ## Status
 
-First pass implemented. The Python package, plugin manifest, entry point,
-agent definition, and all 8 skills are in place. Tests pass. See
-[`AGENTS.md`](AGENTS.md) for the full project guide.
+Initial release. The Python package, plugin manifest, entry point, agent
+definition, and all 8 skills are in place. Tests pass, all quality gates
+green. See [`AGENTS.md`](AGENTS.md) for the full project guide.
 
 ## What It Does
 

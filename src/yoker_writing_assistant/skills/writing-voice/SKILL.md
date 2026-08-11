@@ -43,6 +43,7 @@ Preserve the author's voice. The voice profile is a **measurement instrument, no
 6. **Density over lone use.** One "furthermore" is natural; flag only when AI-tell vocabulary clusters.
 7. **Respect deliberate choices.** A word the author genuinely and consistently uses (per the profile) is not a tell — do not flag it.
 8. **Voice profile is the instrument.** The `~/VOICE.md` profile is the measurement instrument. Apply its rules directly. There is no separate `style-profile` skill — the voice profile and this skill are the complete voice-checking system.
+9. **Profile is a snapshot — cross-reference before flagging.** The voice profile is generated from a corpus at a point in time and may not include the author's most recent work. When checking a derivative work (e.g., posts adapted from articles), cross-reference flagged terms against the actual source material before reporting drift. If the author used a flagged term in the source article, it is article-native — do not report it as drift. Instead, surface as `TODO PROPOSAL: consider updating VOICE.md to include recent work` for the author to decide.
 
 ## Local Guardrail
 

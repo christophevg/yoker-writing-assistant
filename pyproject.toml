@@ -24,7 +24,7 @@ classifiers = [
 ]
 keywords = ["yoker", "agent", "writing", "assistant", "plugin"]
 dependencies = [
-  "yoker>=0.8.0",
+  "yoker>=0.10.0",
 ]
 
 [project.optional-dependencies]
@@ -130,7 +130,6 @@ base_python = ["python3.11"]
 [tool.tox.env.py312]
 base_python = ["python3.12"]
 
-# temporary - comment before publishing!
-
-[tool.uv.sources]
-yoker = { path = "../yoker", editable = true }
+# temporary - uncomment for local development:
+# [tool.uv.sources]
+# yoker = { path = "../yoker", editable = true }

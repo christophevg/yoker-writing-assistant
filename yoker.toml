@@ -9,7 +9,6 @@ provider = "ollama"
 base_url = "https://ollama.com"
 api_key = "${OLLAMA_API_KEY}"
 model = "glm-5.2:cloud"  # Default model to use
-timeout_seconds = 60  # Request timeout in seconds
 
 [backend.ollama.parameters]
 

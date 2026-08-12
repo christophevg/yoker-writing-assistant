@@ -1,3 +1,22 @@
+# Dogfooding: The Writing Assistant Reviews Itself
+
+This page is a dogfooding artifact — the writing assistant was asked to
+review its own README.md. It demonstrates the agent in action: the skills
+it invokes, the `TODO:`/`TODO PROPOSAL:` markers it produces, and the
+"What this did NOT check" note it ends with. It is also a real review
+that caught real issues, several of which have since been fixed.
+
+The original review was produced by running the writing assistant agent
+against the project's own `README.md`. The agent invoked
+`yoker_writing_assistant:writing-review` for the developmental review and
+performed claim verification against the actual repository contents. No
+prose was written by the agent — every finding is a flag, a question, or
+a proposal.
+
+What follows is the unedited review output.
+
+---
+
 ## Review Report: README.md
 
 ### Executive Summary
@@ -97,3 +116,40 @@ One minor observation: "pet-store showcase package" is more whimsical than your 
 - **Agent/skill definition correctness** — I did not review `agents/writing-assistant.md` or the skill files for adaptation issues. This was scoped to README.md only.
 - **Makefile target functionality** — I verified targets exist but did not run them.
 - **`yoker.toml` contents** — I did not read the repo's `yoker.toml` to verify the Configuration section's claims about its contents.
+
+---
+
+## What This Demonstrates
+
+Several things about the writing assistant are visible in this artifact:
+
+1. **The non-negotiable rule holds.** The review contains zero authored
+   prose. Every finding is a flag, a question, or a proposal. Issues 1–5
+   are factual findings (broken links, stale content). Issues 6–10 are
+   recommended improvements, each framed as a `TODO:` for the author. The
+   coverage analysis and claim verification tables are analytical output,
+   not prose.
+
+2. **The developmental review methodology works.** The review follows the
+   `writing-review` skill's structure: executive summary → critical issues
+   → recommended improvements → coverage analysis → claim verification →
+   voice drift → what this did NOT check. This is the advisory report
+   format, adapted with `TODO:` markers instead of prose rewrites.
+
+3. **Claim verification is real.** The agent verified claims by reading the
+   actual repository (Makefile targets, pyproject.toml, source files) and
+   flagged disputes where claims contradicted evidence. The "Verified" and
+   "Disputed" labels are the claim classification from the review
+   methodology.
+
+4. **The "What this did NOT check" note is specific.** Six concrete items,
+   each naming what was outside scope and why. This is the
+   suggestion-acceptance bias defense: the author knows exactly what was
+   and was not covered.
+
+5. **Several findings were acted on.** The LICENSE file now exists. The
+   dead link references were cleaned up. The stale status section was
+   updated (see [Tutorial](tutorial.md) and
+   [AGENTS.md](https://github.com/christophevg/yoker-writing-assistant/blob/main/AGENTS.md)
+   for the current state). The `docs/` directory now exists (you are
+   reading it). Issues 8–10 remain as `TODO:` for the author.

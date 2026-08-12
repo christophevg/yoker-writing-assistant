@@ -57,23 +57,31 @@ quality. Both projects inherit it; each carries its own copy kept in sync.
 
 ## Current Project State
 
-The project is in early setup. The following exist from a previous Claude
-Code (c3) implementation:
+The project is functional. The following are in place:
 
-- `agents/writing-assistant.md` — the main agent definition (needs Yoker adaptation)
-- `skills/` — 8 skill definitions (need Yoker adaptation)
+- `src/yoker_writing_assistant/agents/writing-assistant.md` — the main agent
+  definition (fully adapted to Yoker: Yoker tool names, namespaced skill
+  references, c3:researcher in agents allowlist)
+- `src/yoker_writing_assistant/skills/` — 8 skill definitions (fully adapted
+  to Yoker: namespaced cross-references, Yoker tool names)
+- `src/yoker_writing_assistant/__init__.py` — Python package with
+  `__YOKER_MANIFEST__` for plugin auto-discovery
+- `src/yoker_writing_assistant/cli.py` — thin CLI wrapper with bootstrap
+  wizard
+- `pyproject.toml` — Python package definition (hatchling, uv, ruff, mypy)
+- `Makefile` — standard targets (env-dev, test, check, run, docs, build,
+  publish)
+- `uv.lock` — lock file
+- `tests/test_package.py` — import safety and manifest tests
 - `STANDARDS.md` — shared quality bar with yoker-assistant
 - `yoker.toml` — Yoker runtime config (references c3 dirs)
-- `Makefile` — minimal, includes `~/.yoker/Makefile`
+- `docs/` — Sphinx/ReadTheDocs documentation (tutorial, architecture, skills
+  reference, porting map, installation, quickstart, configuration, API,
+  changelog, dogfooding example)
+- `.readthedocs.yaml` — ReadTheDocs build config
 
-The following are **missing** and need to be created:
-
-- `pyproject.toml` — Python package definition
-- `src/yoker_writing_assistant/` — Python package with `__YOKER_MANIFEST__`
-- Proper Makefile with standard targets (env-dev, test, check, etc.)
-- `uv.lock`
-- Tests
-- Documentation (`docs/`)
+The c3-to-Yoker adaptation is complete. All tool names, skill namespaces,
+and agent references have been migrated.
 
 ## Namespace and Plugin Architecture
 
@@ -335,32 +343,33 @@ Tool outputs can be very large and consume context budget rapidly.
 
 ## Adaptation Checklist
 
-When adapting the existing definitions from c3 to Yoker:
+The c3-to-Yoker adaptation is complete. The checklist below is retained as
+a historical record of what was done.
 
 ### Agent definition (`agents/writing-assistant.md`)
 
-- [ ] Replace tool names: `Read`→`yoker:read`, `Glob`→`yoker:list`,
+- [x] Replace tool names: `Read`→`yoker:read`, `Glob`→`yoker:list`,
       `Grep`→`yoker:search`, `Write`→`yoker:write`, `Edit`→`yoker:update`,
       `Skill`→`yoker:skill`, `Agent`→`yoker:agent`
-- [ ] Add tools not in c3: `yoker:file`, `yoker:existence`, `yoker:mkdir`,
+- [x] Add tools not in c3: `yoker:file`, `yoker:existence`, `yoker:mkdir`,
       `yoker:websearch`, `yoker:webfetch`, `yoker:git`, `yoker:github`,
       `yoker:make`
-- [ ] Remove tools with no Yoker equivalent: `AskUserQuestion`,
+- [x] Remove tools with no Yoker equivalent: `AskUserQuestion`,
       `PushNotification`
-- [ ] Replace skill references: `c3:writing-*`→`yoker_writing_assistant:writing-*`
-- [ ] Add `copy-writer` skill reference
-- [ ] Keep `c3:researcher` reference (external dependency, gracefully handled)
-- [ ] Update the `agents` frontmatter to list `c3:researcher` explicitly
-- [ ] Replace `AskUserQuestion` usage in the body with plain text questions
-- [ ] Replace `Agent(subagent_type="c3:researcher", prompt="...")` with
+- [x] Replace skill references: `c3:writing-*`→`yoker_writing_assistant:writing-*`
+- [x] Add `copy-writer` skill reference
+- [x] Keep `c3:researcher` reference (external dependency, gracefully handled)
+- [x] Update the `agents` frontmatter to list `c3:researcher` explicitly
+- [x] Replace `AskUserQuestion` usage in the body with plain text questions
+- [x] Replace `Agent(subagent_type="c3:researcher", prompt="...")` with
       `yoker:agent` invocation patterns
-- [ ] Remove `PushNotification` references
-- [ ] Update the Tool Usage table to reflect the Yoker tool set
+- [x] Remove `PushNotification` references
+- [x] Update the Tool Usage table to reflect the Yoker tool set
 
 ### Skill definitions (`skills/*/SKILL.md`)
 
-- [ ] Replace skill cross-references: `c3:writing-*`→`yoker_writing_assistant:writing-*`
-- [ ] Replace `c3:researcher` references where skills mention it
-- [ ] Replace tool names in any tool references within skill bodies
-- [ ] No frontmatter changes needed for `name`/`description` (those are
+- [x] Replace skill cross-references: `c3:writing-*`→`yoker_writing_assistant:writing-*`
+- [x] Replace `c3:researcher` references where skills mention it
+- [x] Replace tool names in any tool references within skill bodies
+- [x] No frontmatter changes needed for `name`/`description` (those are
       namespace-agnostic)

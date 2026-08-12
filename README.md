@@ -77,30 +77,25 @@ sections:
 
 - `[backend]` — LLM provider and model
 - `[agents.directories]` — directories to scan for agent definitions
-  (e.g., `c3 = "../c3/agents"` for the optional researcher agent)
+  (e.g., for the optional researcher agent)
 - `[skills.directories]` — directories to scan for skill definitions
-  (e.g., `c3 = "../c3/skills"` for c3 heritage skills)
 - `[plugins]` — plugin registration (this package is loaded via
   `--with yoker_writing_assistant`)
 
-### Optional: c3 Researcher
+### Optional: Researcher
 
 The writing assistant can delegate research tasks to `c3:researcher`, an
-external agent from the [c3](https://github.com/christophevg/c3) project.
-To enable it, add to `yoker.toml`:
+external research agent. To enable it, add to `yoker.toml`:
 
 ```toml
 [agents.directories]
 c3 = "../c3/agents"
-
-[skills.directories]
-c3 = "../c3/skills"
 ```
 
-If c3 is not configured, research delegation is unavailable and the agent
-falls back to direct web search (`yoker:websearch`/`yoker:webfetch`),
-noting the limitation in its output. All other functionality works without
-c3.
+If the researcher is not configured, research delegation is unavailable
+and the agent falls back to direct web search (`yoker:websearch` /
+`yoker:webfetch`), noting the limitation in its output. All other
+functionality works without it.
 
 ## Architecture
 
@@ -123,9 +118,28 @@ Both projects share a common quality bar documented in
 
 ## Documentation
 
-Full documentation will live in `docs/` (pending). The
-[AGENTS.md](AGENTS.md) file provides the project guide for agents working
-on this codebase.
+Full documentation lives in `docs/` and is published to ReadTheDocs:
+
+**https://yoker-writing-assistant.readthedocs.io**
+
+The [Tutorial](https://yoker-writing-assistant.readthedocs.io/en/latest/tutorial.html)
+tells the build story end-to-end — why this package exists, the
+non-negotiable rule, the thin-orchestrator architecture, the eight
+skills, the plugin manifest and CLI wrapper, and the optional researcher
+integration.
+
+Supporting pages: [Installation](https://yoker-writing-assistant.readthedocs.io/en/latest/installation.html),
+[Quickstart](https://yoker-writing-assistant.readthedocs.io/en/latest/quickstart.html),
+[Architecture](https://yoker-writing-assistant.readthedocs.io/en/latest/architecture.html),
+[Skills](https://yoker-writing-assistant.readthedocs.io/en/latest/skills.html),
+[Configuration](https://yoker-writing-assistant.readthedocs.io/en/latest/configuration.html),
+[API](https://yoker-writing-assistant.readthedocs.io/en/latest/api.html),
+[Dogfooding](https://yoker-writing-assistant.readthedocs.io/en/latest/dogfooding.html),
+[Changelog](https://yoker-writing-assistant.readthedocs.io/en/latest/changelog.html).
+
+The [AGENTS.md](AGENTS.md) file provides the project guide for agents
+working on this codebase. [PACKAGE.md](PACKAGE.md) provides AI-optimized
+package documentation for consumers.
 
 ## License
 

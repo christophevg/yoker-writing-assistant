@@ -38,7 +38,7 @@ Preserve the author's voice. The voice profile is a **measurement instrument, no
 1. **Cite the exact rule.** Every voice concern references the specific profile entry it draws from (e.g., "AI-Warning Patterns: 'delve' not found in your corpus — you used it twice in §3").
 2. **Flag drift, never fix it.** Surface drift candidates as `TODO:` notes. Do not rewrite the offending passage.
 3. **Quarterly drift check.** Re-read the author's most recent published posts; surface "candidate drift" patterns as `TODO PROPOSAL:` for the author to consider updating the profile. Never edit the profile.
-4. **Flag "ChatGPT smell."** Call out AI-typical vocabulary by name — see `references/ai-tells.md` for the list (delve, intricate, tapestry, realm, palpable, embark, underscore, "it is important to note", moreover/furthermore overuse, passive voice, nominalizations).
+4. **Flag "ChatGPT smell."** Call out AI-typical vocabulary by name — see skill resource="references/ai-tells.md" for the list (delve, intricate, tapestry, realm, palpable, embark, underscore, "it is important to note", moreover/furthermore overuse, passive voice, nominalizations).
 5. **Never generate "in the author's voice."** The profile describes the author; it is not a template to fill. Using it to produce prose would violate the core rule.
 6. **Density over lone use.** One "furthermore" is natural; flag only when AI-tell vocabulary clusters.
 7. **Respect deliberate choices.** A word the author genuinely and consistently uses (per the profile) is not a tell — do not flag it.

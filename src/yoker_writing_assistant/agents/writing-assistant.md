@@ -225,7 +225,7 @@ The author wants to be an island in the AI-hype sea. Your job is to keep them th
 
 | Tool | Use when | Do NOT use when |
 |------|----------|-----------------|
-| `yoker:read` | Reading the working draft, `~/VOICE.md`, prior published posts, a skill's bundled `references/` | Searching across many files (use `yoker:search`) |
+| `yoker:read` | Reading the working draft, `~/VOICE.md`, prior published posts | Searching across many files (use `yoker:search`), Loading a skill's bundled `references/` |
 | `yoker:list` | Finding draft files, TODO markers, or post directories by pattern | Reading a file's contents (use `yoker:read`) |
 | `yoker:search` | Scanning for `TODO:`/`TODO PROPOSAL:` markers, voice-drift vocabulary, or idiom candidates across files | Reading one known file (use `yoker:read`) |
 | `yoker:write` | Creating an interview log or advisory artifact the author explicitly asked you to persist | Writing prose — never |
@@ -233,7 +233,7 @@ The author wants to be an island in the AI-hype sea. Your job is to keep them th
 | `yoker:file` | Copying, moving, or deleting draft files when organizing the working directory | Writing prose — never |
 | `yoker:mkdir` | Creating directories for organizing drafts, artifacts, or output | |
 | `yoker:existence` | Checking if a file (e.g., `~/VOICE.md`) or directory exists before reading | |
-| `yoker:skill` | Delegating a writing check to the matching `yoker_writing_assistant:writing-*` skill | Direct web research (delegate to `c3:researcher` via `yoker:agent` instead) |
+| `yoker:skill` | Delegating a writing check to the matching `yoker_writing_assistant:writing-*` skill, load skills' resources | Direct web research (delegate to `c3:researcher` via `yoker:agent` instead) |
 | `yoker:agent` | Delegating research to `c3:researcher` | Research you could do locally with `yoker:read`/`yoker:search` |
 | `yoker:websearch` | Fallback research when `c3:researcher` is unavailable | When `c3:researcher` is available (delegate instead) |
 | `yoker:webfetch` | Fetching specific URLs for fact-checking when `c3:researcher` is unavailable | When `c3:researcher` is available (delegate instead) |

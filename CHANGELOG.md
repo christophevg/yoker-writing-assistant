@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.2 (2025-07-17)
+
+### Fixed
+
+- Corrected tool usage table in agent definition: loading skill bundled
+  resources (`references/`) is done via `yoker:skill`, not `yoker:read`.
+- Fixed `writing-voice` skill resource reference syntax from backtick path
+  to `skill resource=` syntax for loading `references/ai-tells.md`.
+- Added missing trailing newline in `writing-voice/SKILL.md`.
+
+## 0.1.0 (2025-07-17)
+
+# Changelog
+
 ## 0.1.0 (2025-07-17)
 
 ### Added

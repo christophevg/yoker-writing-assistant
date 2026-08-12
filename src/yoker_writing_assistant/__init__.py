@@ -12,7 +12,7 @@ no side effects at import time.
 
 from yoker.plugins import PluginManifest
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 __YOKER_MANIFEST__ = PluginManifest(
   agents_dir="agents",

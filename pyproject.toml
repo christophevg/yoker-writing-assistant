@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "yoker-writing-assistant"
-version = "0.1.0"
+version = "0.1.1"
 description = "A writing assistant plugin for Yoker — coaches and develops, never writes for you"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -24,7 +24,7 @@ classifiers = [
 ]
 keywords = ["yoker", "agent", "writing", "assistant", "plugin"]
 dependencies = [
-  "yoker>=0.10.0",
+  "yoker>=0.10.1",
 ]
 
 [project.optional-dependencies]

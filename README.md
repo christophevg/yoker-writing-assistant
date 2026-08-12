@@ -3,6 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)][pypi]
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)][uv]
 [![Yoker](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/christophevg/yoker/master/media/badge/v0.json)][yoker]
+[![Docs](https://img.shields.io/readthedocs/yoker-writing-assistant)][docs]
 [![Agentic](https://img.shields.io/badge/workflow-agentic-blueviolet?style=flat-square)][agentic]
 
 > A writing assistant that coaches and develops — but never writes for you.
@@ -12,6 +13,12 @@ mode: Yoker is the entry point, and this package provides the main agent
 and skills for an interactive writing coaching session. The agent
 interviews, challenges, reviews, and flags — but every word of prose is
 written by the author.
+
+**Full documentation** is published at
+**[yoker-writing-assistant.readthedocs.io](https://yoker-writing-assistant.readthedocs.io)** —
+including a [tutorial](https://yoker-writing-assistant.readthedocs.io/en/latest/tutorial.html)
+that tells the build story end-to-end, a [quickstart](https://yoker-writing-assistant.readthedocs.io/en/latest/quickstart.html)
+with a worked example, and a per-skill [reference](https://yoker-writing-assistant.readthedocs.io/en/latest/skills.html).
 
 ## Status
 
@@ -149,3 +156,4 @@ package documentation for consumers.
 [uv]: https://docs.astral.sh/uv/
 [agentic]: https://christophe.vg/about/Agentic-Workflow
 [yoker]: https://yoker.dev
+[docs]: https://yoker-writing-assistant.readthedocs.io

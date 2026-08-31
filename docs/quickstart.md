@@ -11,7 +11,7 @@ make run
 # or
 uvx yoker-writing-assistant
 # or
-yoker --with yoker_writing_assistant --agent yoker_writing_assistant:writing-assistant
+yoker --with yoker_writing_assistant --agent-name yoker_writing_assistant:writing-assistant
 ```
 
 The assistant starts with an interactive prompt. On first run without

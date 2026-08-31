@@ -29,4 +29,4 @@ def test_version():
   """Version is defined and matches a semver pattern."""
   from yoker_writing_assistant import __version__
 
-  assert __version__ == "0.1.2"
+  assert __version__ == "0.1.3"

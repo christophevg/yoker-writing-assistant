@@ -1,7 +1,7 @@
 """Entry point for yoker-writing-assistant.
 
-Injects ``--with yoker-writing-assistant`` and
-``--agent yoker_writing_assistant:writing-assistant`` into Yoker's CLI,
+Injects ``--with yoker_writing_assistant`` and
+``--agent-name yoker_writing_assistant:writing-assistant`` into Yoker's CLI,
 then delegates to Yoker's ``main()``. This allows running the writing
 assistant via ``uvx yoker-writing-assistant`` or
 ``yoker-writing-assistant``.
@@ -66,8 +66,8 @@ def _run_bootstrap_wizard() -> None:
 
 def main() -> None:
   # Pre-flight: detect missing configuration before injecting CLI args.
-  # Our injected flags (--agent, --harness-*, --plugins-enabled) would make
-  # config_provided() always return True, masking the no-config case.
+  # Our injected flags (--agent-name, --harness-*, --plugins-enabled) would
+  # make config_provided() always return True, masking the no-config case.
   if not config_provided():
     _run_bootstrap_wizard()
 
@@ -76,7 +76,7 @@ def main() -> None:
       "yoker",
       "--with",
       "yoker_writing_assistant",
-      "--agent",
+      "--agent-name",
       "yoker_writing_assistant:writing-assistant",
       "--harness-name",
       "yoker-writing-assistant",

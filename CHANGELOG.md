@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.3 (2026-08-31)
+
+### Changed
+
+- **Strict Yoker compatibility pin**: dependency tightened from
+  `yoker>=0.10.1` to `yoker>=0.11.0,<0.12` (0.11.x only). The `--agent` →
+  `--agent-name` CLI rename in yoker 0.11.0 breaks cross-minor-version
+  compatibility, so the constraint now tracks the supported minor series.
+
+### Fixed
+
+- CLI wrapper injects `--agent-name` (was `--agent`), matching yoker
+  0.11.0's Clevis-generated flag for `Config.agent.name`.
+- Documentation updated everywhere: all functional `--agent` references
+  (command examples, code snippets, architecture/tutorial text) now use
+  `--agent-name`.
+
 ## 0.1.2 (2025-07-17)
 
 ### Fixed

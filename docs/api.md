@@ -29,8 +29,8 @@ side effects at import time.
 ## `yoker_writing_assistant.cli.main()`
 
 The CLI entry point. Injects `--with yoker_writing_assistant` and
-`--agent yoker_writing_assistant:writing-assistant` into Yoker's CLI and
-delegates to Yoker's `main()`. Also handles first-run bootstrap: if no
+`--agent-name yoker_writing_assistant:writing-assistant` into Yoker's CLI
+and delegates to Yoker's `main()`. Also handles first-run bootstrap: if no
 configuration is found, an interactive wizard runs before the CLI args are
 injected.
 
@@ -55,7 +55,7 @@ The package version string, matching the version in `pyproject.toml`.
 ```python
 from yoker_writing_assistant import __version__
 
-print(__version__)  # "0.1.2"
+print(__version__)  # "0.1.3"
 ```
 
 ## CLI usage
@@ -68,7 +68,7 @@ yoker-writing-assistant --ui-mode batch         # batch mode
 yoker-writing-assistant --resume mysession      # resume a session
 
 # or via the Yoker CLI directly:
-yoker --with yoker_writing_assistant --agent yoker_writing_assistant:writing-assistant
+yoker --with yoker_writing_assistant --agent-name yoker_writing_assistant:writing-assistant
 ```
 
 Additional CLI flags are appended after the injected args and passed
@@ -100,7 +100,7 @@ yoker_writing_assistant = true
 Or via the CLI:
 
 ```bash
-yoker --with yoker_writing_assistant --agent yoker_writing_assistant:writing-assistant
+yoker --with yoker_writing_assistant --agent-name yoker_writing_assistant:writing-assistant
 ```
 
 The agent and all eight skills become available under the

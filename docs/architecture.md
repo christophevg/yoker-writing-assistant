@@ -103,7 +103,7 @@ preferred in agent and skill definitions for clarity and correctness.
 ### CLI wrapper
 
 The entry point at `src/yoker_writing_assistant/cli.py` injects `--with`
-and `--agent` into Yoker's CLI and delegates to Yoker's `main()`. This
+and `--agent-name` into Yoker's CLI and delegates to Yoker's `main()`. This
 allows running the writing assistant via `uvx yoker-writing-assistant` or
 `yoker-writing-assistant` directly. The wrapper also handles first-run
 bootstrap: if no configuration is found, an interactive wizard runs before

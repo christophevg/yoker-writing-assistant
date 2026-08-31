@@ -129,3 +129,6 @@ base_python = ["python3.11"]
 
 [tool.tox.env.py312]
 base_python = ["python3.12"]
+
+[tool.uv.sources]
+yoker = { path = "../yoker", editable = true }

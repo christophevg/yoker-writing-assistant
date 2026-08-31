@@ -100,8 +100,8 @@ auto_permission = ["status", "log", "diff", "branch", "show", "add", "pull", "ta
 [tools.github]
 enabled = true
 allowed_operations = [
-  "repo_view", "issue_list", "issue_view", "issue_create", "pr_list", "pr_view",
-  "pr_reviews", "pr_comments",
+  "repo_view", "issue_list", "issue_view", "issue_create",
+  "pr_list", "pr_view", "pr_reviews", "pr_comments", "pr_edit", "pr_ready", "pr_comment",
   "workflow_list", "workflow_view",
   "release_list", "release_view",
   "pr_create", "release_create"

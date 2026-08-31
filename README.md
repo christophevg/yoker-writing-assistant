@@ -68,7 +68,7 @@ make run                                        # launch the writing assistant
 Or run directly via the Yoker CLI:
 
 ```bash
-yoker --with yoker_writing_assistant --agent yoker_writing_assistant:writing-assistant
+yoker --with yoker_writing_assistant --agent-name yoker_writing_assistant:writing-assistant
 ```
 
 A Yoker backend is a prerequisite — either a local
@@ -112,7 +112,7 @@ Python package, discovered via `importlib.resources`). Yoker's plugin
 loader discovers the agent and skill definitions automatically, namespacing
 them under `yoker_writing_assistant:`. The entry point is a thin Python
 wrapper (`cli.py`) that injects `--with yoker_writing_assistant` and
-`--agent yoker_writing_assistant:writing-assistant` into Yoker's CLI, so
+`--agent-name yoker_writing_assistant:writing-assistant` into Yoker's CLI, so
 `uvx yoker-writing-assistant` launches the writing assistant directly.
 
 The sister project

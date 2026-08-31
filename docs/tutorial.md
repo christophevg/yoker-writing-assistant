@@ -243,7 +243,7 @@ agent and skill definitions:
 ```python
 from yoker.plugins import PluginManifest
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 __YOKER_MANIFEST__ = PluginManifest(
   agents_dir="agents",
@@ -269,7 +269,7 @@ the fully qualified names are preferred for clarity.
 
 A thin Python wrapper makes the package runnable as a standalone command.
 The `[project.scripts]` entry in `pyproject.toml` points to
-`yoker_writing_assistant.cli:main`, which injects `--with` and `--agent`
+`yoker_writing_assistant.cli:main`, which injects `--with` and `--agent-name`
 into Yoker's CLI and delegates to Yoker's `main()`:
 
 ```python
@@ -281,7 +281,7 @@ def main() -> None:
     [
       "yoker",
       "--with", "yoker_writing_assistant",
-      "--agent", "yoker_writing_assistant:writing-assistant",
+      "--agent-name", "yoker_writing_assistant:writing-assistant",
       "--harness-name", "yoker-writing-assistant",
       # ... harness metadata ...
       "--plugins-enabled",

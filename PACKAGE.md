@@ -20,7 +20,7 @@ pip install yoker-writing-assistant
 uv add yoker-writing-assistant
 ```
 
-Requires `yoker>=0.10.1` and Python 3.10+.
+Requires `yoker>=0.11.0,<0.12` and Python 3.10+.
 
 ## Plugin Manifest
 
@@ -50,7 +50,7 @@ yoker_writing_assistant = true
 ### Via CLI
 
 ```bash
-yoker --with yoker_writing_assistant --agent yoker_writing_assistant:writing-assistant
+yoker --with yoker_writing_assistant --agent-name yoker_writing_assistant:writing-assistant
 ```
 
 ## Provided Agents
@@ -81,7 +81,7 @@ yoker-writing-assistant --ui-mode batch    # batch mode
 
 Registered as `[project.scripts]` in `pyproject.toml`, pointing to
 `yoker_writing_assistant.cli:main`. The wrapper injects `--with` and
-`--agent` flags into Yoker's CLI and delegates to Yoker's `main()`.
+`--agent-name` flags into Yoker's CLI and delegates to Yoker's `main()`.
 
 ## Optional Dependency: c3:researcher
 

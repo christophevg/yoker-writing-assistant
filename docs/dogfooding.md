@@ -89,10 +89,10 @@ The Architecture section mentions that `uvx yoker-writing-assistant` launches th
 
 | Claim | Status | Evidence |
 |-------|--------|----------|
-| "Yoker 1.0 pet-store showcase package" | Unverifiable | Yoker is at 0.8.0 per pyproject.toml dependency; "1.0" may be aspirational |
+| "Yoker 1.0 pet-store showcase package" | Unverifiable | Yoker is at 0.11.0 per pyproject.toml dependency; "1.0" may be aspirational |
 | "make env-dev" works | Verified | Target exists in Makefile |
 | "make run" works | Verified | Target exists in Makefile |
-| `yoker --with yoker-writing-assistant --agent ...` | Verified | Matches AGENTS.md and cli.py pattern |
+| `yoker --with yoker_writing_assistant --agent-name ...` | Verified | Matches AGENTS.md and cli.py pattern |
 | "Runtime configuration lives in `~/.yoker.toml`" | Plausible | Consistent with AGENTS.md |
 | "A reference template is provided as `yoker.toml`" | Verified | File exists |
 | `[MIT](LICENSE)` | **Disputed** | LICENSE file does not exist |

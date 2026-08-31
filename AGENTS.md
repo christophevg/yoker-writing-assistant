@@ -237,8 +237,8 @@ error handling in the agent definition).
 
 A thin Python wrapper is needed because `pyproject.toml` `[project.scripts]`
 entries must point to a Python callable, not a shell command. The wrapper
-injects `--with` and `--agent` into `sys.argv` and delegates to Yoker's
-`main()`:
+injects `--with`, `--agent-name`, and harness/MotD/plugin flags into
+`sys.argv` and delegates to Yoker's `main()`:
 
 ```toml
 [project.scripts]
@@ -254,21 +254,21 @@ def main():
   sys.argv = [
     "yoker",
     "--with", "yoker_writing_assistant",
-    "--agent", "yoker_writing_assistant:writing-assistant",
+    "--agent-name", "yoker_writing_assistant:writing-assistant",
   ] + sys.argv[1:]
   yoker_main()
 ```
 
 This loads the plugin (`--with yoker_writing_assistant` — the Python package
 name) and selects the writing assistant as the primary agent
-(`--agent yoker_writing_assistant:writing-assistant`). Any additional CLI
+(`--agent-name yoker_writing_assistant:writing-assistant`). Any additional CLI
 flags the user passes (e.g., `--ui-mode batch`, `--resume mysession`) are
 appended after the injected args.
 
 Users can also run the Yoker CLI directly with the same flags:
 
 ```bash
-yoker --with yoker_writing_assistant --agent yoker_writing_assistant:writing-assistant
+yoker --with yoker_writing_assistant --agent-name yoker_writing_assistant:writing-assistant
 ```
 
 ## Plugin Manifest
@@ -296,7 +296,7 @@ under `yoker_writing_assistant:` (the package name).
 ```text
 src/yoker_writing_assistant/
 ├── __init__.py              # __YOKER_MANIFEST__, version, import-safe
-├── cli.py                   # Entry point: injects --with/--agent, delegates to yoker main
+├── cli.py                   # Entry point: injects --with/--agent-name, delegates to yoker main
 ├── py.typed                 # PEP 561 marker
 ├── agents/
 │   └── writing-assistant.md # Main agent definition (Yoker-adapted)

@@ -6,27 +6,30 @@ version = "1.0"
 provider = "ollama"
 
 [backend.ollama]
-base_url = "https://ollama.com"
-api_key = "${OLLAMA_API_KEY}"
-model = "glm-5.2:cloud"  # Default model to use
-
-[backend.ollama.parameters]
+model = "glm-5.3-flash:cloud"
 
 [context]
-manager = "basic_persistence"
-storage_path = "./context"
-session_id = "auto"
-persist_after_turn = true
-filename = "{session_id}-{agent_id}"
-fresh = false
-max_tokens = 200000
-overflow_keep_first_user = true
+storage_path = "./local/context"
 
 [permissions]
-filesystem_paths = ["."]
-network_access = "none"
-max_file_size_kb = 500
-protected_files = ["Makefile", "makefile", "GNUmakefile", "Justfile", "justfile", "Taskfile.yml", "pyproject.toml", "tox.ini", "setup.py", "setup.cfg", "yoker.toml", ".git/config", ".git/hooks/*", ".github/workflows/*.yml", "uv.lock", "poetry.lock"]
+filesystem_paths = [ ".", "../yoker", "../c3" ]
+blocked_write_paths = [
+  "../yoker",
+  "Makefile",
+  "GNUmakefile",
+  "Justfile",
+  "Taskfile.yml",
+  "pyproject.toml",
+  "tox.ini",
+  "setup.py",
+  "setup.cfg",
+  "yoker.toml",
+  ".git/config",
+  ".git/hooks/*",
+  ".github/workflows/*.yml",
+  "uv.lock",
+  "poetry.lock",
+]
 
 [tools]
 
@@ -34,17 +37,6 @@ protected_files = ["Makefile", "makefile", "GNUmakefile", "Justfile", "justfile"
 enabled = true
 max_depth = 5
 max_entries = 2000
-
-[tools.read]
-enabled = true
-allowed_extensions = [".txt", ".md", ".json", ".yaml", ".yml", ".toml", ".py", ".js", ".ts", ".html", ".css"]
-blocked_patterns = ["\\.env", "\\.git", "\\.ssh", "\\.aws", "\\.gnupg", "credentials", "secrets?", "\\.pem$", "\\.key$", "id_rsa", "id_ed25519", "\\.bak$", "\\.old$"]
-
-[tools.write]
-enabled = true
-allow_overwrite = false
-max_size_kb = 1000
-blocked_extensions = [".exe", ".sh", ".bat"]
 
 [tools.update]
 enabled = true
@@ -108,7 +100,7 @@ auto_permission = ["status", "log", "diff", "branch", "show", "add", "pull", "ta
 [tools.github]
 enabled = true
 allowed_operations = [
-  "repo_view", "issue_list", "issue_view", "pr_list", "pr_view",
+  "repo_view", "issue_list", "issue_view", "issue_create", "pr_list", "pr_view",
   "pr_reviews", "pr_comments",
   "workflow_list", "workflow_view",
   "release_list", "release_view",

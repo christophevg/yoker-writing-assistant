@@ -31,12 +31,12 @@ make run            # launch the writing assistant
 ### Option C: Via the Yoker CLI directly
 
 ```bash
-yoker --with yoker_writing_assistant --agent yoker_writing_assistant:writing-assistant
+yoker --with yoker_writing_assistant --agent-name yoker_writing_assistant:writing-assistant
 ```
 
 This loads the plugin (`--with yoker_writing_assistant`) and selects the
-writing assistant as the primary agent (`--agent`). Any additional CLI flags
-can be appended.
+writing assistant as the primary agent (`--agent-name`). Any additional CLI
+flags can be appended.
 
 ## Backend setup
 

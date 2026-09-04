@@ -3539,7 +3539,7 @@ wheels = [
 
 [[package]]
 name = "yoker-writing-assistant"
-version = "0.1.3"
+version = "0.1.4"
 source = { editable = "." }
 dependencies = [
     { name = "yoker" },

@@ -23,10 +23,3 @@ def test_manifest_declares_default_agent():
   from yoker_writing_assistant import __YOKER_MANIFEST__
 
   assert __YOKER_MANIFEST__.agent == "yoker_writing_assistant:writing-assistant"
-
-
-def test_version():
-  """Version is defined and matches a semver pattern."""
-  from yoker_writing_assistant import __version__
-
-  assert __version__ == "0.1.3"

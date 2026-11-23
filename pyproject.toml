@@ -7,7 +7,7 @@ name = "yoker-writing-assistant"
 version = "0.1.4"
 description = "A writing assistant plugin for Yoker — coaches and develops, never writes for you"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 license = {text = "MIT"}
 authors = [
   {name = "Christophe VG", email = "christophe.vg@example.com"},
@@ -17,14 +17,13 @@ classifiers = [
   "Intended Audience :: Developers",
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Typing :: Typed",
 ]
 keywords = ["yoker", "agent", "writing", "assistant", "plugin"]
 dependencies = [
-  "yoker>=0.12,<0.13",
+  "yoker>=0.13",
 ]
 
 [project.optional-dependencies]
@@ -62,7 +61,7 @@ asyncio_mode = "auto"
 addopts = "-v --cov-report=term-missing"
 
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.11"
 strict = true
 warn_return_any = true
 warn_unused_ignores = true
@@ -120,9 +119,6 @@ commands_pre = [
   ["uv", "pip", "install", "pytest", "pytest-cov", "pytest-asyncio"],
 ]
 commands = [["pytest", "tests", "-v", "--cov=yoker_writing_assistant", "--cov-report=term-missing"]]
-
-[tool.tox.env.py310]
-base_python = ["python3.10"]
 
 [tool.tox.env.py311]
 base_python = ["python3.11"]

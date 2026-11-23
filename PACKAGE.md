@@ -20,7 +20,7 @@ pip install yoker-writing-assistant
 uv add yoker-writing-assistant
 ```
 
-Requires `yoker>=0.11.0,<0.12` and Python 3.10+.
+Requires `yoker>=0.13` and Python 3.11+.
 
 ## Plugin Manifest
 

@@ -11,8 +11,8 @@ env-dev: ## Install all dependencies (dev + docs)
 env-run: ## Install runtime dependencies only
 	uv sync
 
-install-pythons: ## Install Python 3.10, 3.11, 3.12
-	uv python install 3.10 3.11 3.12
+install-pythons: ## Install Python 3.11, 3.12
+	uv python install 3.11 3.12
 
 ## Testing
 

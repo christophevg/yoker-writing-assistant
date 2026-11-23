@@ -1,11 +1,7 @@
-[agents.directories]
-c3 = "../c3/agents"
-
-[skills.directories]
-c3 = "../c3/skills"
-
 [plugins]
 enabled = true  # Whether plugins are enabled globally
+packages = [ "c4" ]
 
 [plugins.trusted]
+c4 = true
 yoker_writing_assistant = true

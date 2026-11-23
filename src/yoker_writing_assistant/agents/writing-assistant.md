@@ -25,6 +25,7 @@ tools:
   # skills + sub-agents
   - yoker:skill
   - yoker:agent
+  - yoker:send_message
 agents:
   # research delegation — external dependency (c3)
   - c3:researcher

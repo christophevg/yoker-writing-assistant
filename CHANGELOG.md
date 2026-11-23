@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.1.5 (2026-11-23)
+
+### Changed
+
+- **Upgrade to yoker 0.13.0**: dependency relaxed from `yoker>=0.12,<0.13`
+  to `yoker>=0.13` (#2). Yoker 0.13.0 requires Python ≥3.11, so the project
+  floor moves from 3.10 to 3.11: `requires-python`, classifiers, mypy
+  `python_version`, tox env list, and `install-pythons` updated; README,
+  `PACKAGE.md`, and `docs/installation.md` synced (also fixed a stale
+  `yoker>=0.11.0,<0.12` reference in `PACKAGE.md`).
+
+### Added
+
+- `yoker:send_message` added to the writing-assistant agent tool set
+  (yoker 0.13.0 feature, agent definition only).
+
+## 0.1.4 (2026-09-04)
+
+### Changed
+
+- **Upgrade to yoker 0.12**: dependency moved from `yoker>=0.11.0,<0.12`
+  to `yoker>=0.12,<0.13`, with the local yoker config cleaned up
+  (c3 directories → c4 packages) in the same release train.
+
 ## 0.1.3 (2026-08-31)
 
 ### Changed
